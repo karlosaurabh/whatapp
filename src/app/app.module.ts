@@ -7,6 +7,10 @@ import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { ChatBoxComponent } from './chat/chat-box/chat-box.component';
 
+//CUSTOM MODULES
+import { UserModule } from './user/user.module';
+import { ChatModule } from './chat/chat-box/chat.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +20,9 @@ import { ChatBoxComponent } from './chat/chat-box/chat-box.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule,
+    ChatModule
   ],
   providers: [],
   bootstrap: [AppComponent]
