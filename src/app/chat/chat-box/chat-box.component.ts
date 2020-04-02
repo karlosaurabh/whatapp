@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-chat-box',
   templateUrl: './chat-box.component.html',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatBoxComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit() {
   }

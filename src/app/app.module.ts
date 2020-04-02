@@ -1,30 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//THIS IS FOR HTTP REQUEST
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './user/login/login.component';
-import { SignupComponent } from './user/signup/signup.component';
-import { ChatBoxComponent } from './chat/chat-box/chat-box.component';
 
 //CUSTOM MODULES
 import { UserModule } from './user/user.module';
 import { ChatModule } from './chat/chat-box/chat.module';
+import { AppService } from './app.service';
+//NG2-TOSTOR
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    SignupComponent,
-    ChatBoxComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    UserModule,
-    ChatModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        UserModule,
+        ChatModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot()
+
+    ],
+    providers: [AppService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

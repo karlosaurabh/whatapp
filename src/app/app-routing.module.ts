@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './user/login/login.component';
+import { UserModule } from './user/user.module';
+import { ChatModule } from './chat/chat-box/chat.module';
+import { ActivateGuard } from 'src/app/activate.guard';
 
 
 const routes: Routes = [
@@ -11,7 +14,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes),
+    UserModule,
+    ChatModule
+  ],
+  exports: [RouterModule],
+  // providers: [ActivateGuard]
 })
 export class AppRoutingModule { }
