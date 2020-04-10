@@ -39,4 +39,13 @@ export class AppService {
     return this._http.post(`${this.url}users/login`, params);
   }
 
+  public getUserInfoInFromLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('UserInfo'))
+  }
+
+  public setUserInfoInLocalStorage = (data) => {
+    console.log('local storage', data)
+    localStorage.setItem('UserInfo', JSON.stringify(data));
+  }
+
 }

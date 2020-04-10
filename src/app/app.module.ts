@@ -13,6 +13,7 @@ import { AppService } from './app.service';
 //NG2-TOSTOR
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { SocketService } from './socket.service';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
         ToastrModule.forRoot()
 
     ],
-    providers: [AppService],
+    providers: [AppService, SocketService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
